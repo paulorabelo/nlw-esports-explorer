@@ -11,6 +11,7 @@ ul {
 
 header {
     padding-top: 32px;
+    height: calc(120px + 32px);
     /* text-align: center; */
 }
 
@@ -21,6 +22,12 @@ header div {
     border-radius: 50%;
     display: flex;
     padding: 4px;
+
+    transition: transform .3s;
+}
+
+header div:hover {
+    transform: scale(1.1);
 }
 
 header img {
@@ -88,14 +95,67 @@ section ul {
     margin-top: 24px;
 }
 
+section ul li{
+    transition: transform .3s;
+}
+
+section ul li:hover{
+    transform: scale(1.1);
+}
+
 .games-list img {
     border-radius: 8px;
     width: 90px;
-
 }
 
 .channel-list img {
     border-radius: 50%;
     width: 70px;
     border: 1px solid #443E54;
+}
+
+/* animation */
+
+header div{
+    animation: fromTop .7s .3s backwards;
+}
+
+main section{
+    animation: fromBotton .7s backwards;
+}
+
+main section:nth-child(1) {
+    animation-delay: .2s;
+}
+
+main section:nth-child(2) {
+    animation-delay: .4s;
+}
+
+main section:nth-child(3) {
+    animation-delay: .6s;
+}
+
+@keyframes fromTop {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fromBotton {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
